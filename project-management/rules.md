@@ -95,7 +95,7 @@ Brief overview of the project.
 **Period**: [Start Date] to [End Date]
 
 ## Summary
-Overall status: 🟢 On Track / 🟡 At Risk / 🔴 Off Track
+Overall status: 🟢 Green (On Track) / 🟡 Yellow (At Risk) / 🔴 Red (Off Track)
 
 ## Accomplishments This Week
 - Accomplishment 1

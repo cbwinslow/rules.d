@@ -72,8 +72,8 @@ def process_user_input(data: str) -> str:
 ### Never Commit Secrets
 ```bash
 # Bad - never do this
-API_KEY="sk-123456789"
-DATABASE_PASSWORD="supersecret"
+API_KEY="your-api-key-here"
+DATABASE_PASSWORD="your-password-here"
 
 # Good - use environment variables
 API_KEY="${API_KEY}"

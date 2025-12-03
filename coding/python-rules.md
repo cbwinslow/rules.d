@@ -5,7 +5,7 @@ Specific rules for AI agents working with Python code.
 ## Style and Formatting
 
 ### PEP 8 Compliance
-- Maximum line length: 88 characters (Black default) or 79 (strict PEP 8)
+- Maximum line length: Use 88 characters when using Black formatter, otherwise use 79 characters per PEP 8
 - Use 4 spaces for indentation
 - Two blank lines between top-level definitions
 - One blank line between method definitions
