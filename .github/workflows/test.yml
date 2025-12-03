@@ -1,0 +1,52 @@
+name: Test Rules
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+# Minimal permissions required
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate Rules
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Make test scripts executable
+        run: chmod +x tests/*.sh
+
+      - name: Run test suite
+        run: ./tests/test-runner.sh
+
+      - name: Check markdown formatting
+        uses: DavidAnson/markdownlint-cli2-action@v17
+        with:
+          globs: |
+            **/*.md
+            !.github/**
+        continue-on-error: true
+
+  link-check:
+    name: Check Links
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Check for broken links
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: --verbose --no-progress './**/*.md'
+          fail: false

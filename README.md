@@ -1,16 +1,38 @@
 # rules.d
 
+[![Test Rules](https://github.com/cbwinslow/rules.d/actions/workflows/test.yml/badge.svg)](https://github.com/cbwinslow/rules.d/actions/workflows/test.yml)
+
 A comprehensive collection of rules.md files for AI agents to follow across various domains and applications.
 
 ## Purpose
 
 This repository provides a centralized, organized system of behavioral rules and guidelines for AI agents. These rules help ensure consistent, high-quality, and safe AI-assisted operations across different use cases.
 
+## 📚 Documentation
+
+- **[CATALOG.md](CATALOG.md)** - Complete index of all rules by category
+- **[docs/usage-guide.md](docs/usage-guide.md)** - How to use these rules in your workflows
+- **[docs/rule-format.md](docs/rule-format.md)** - Standard format for writing rule files
+- **[docs/contributing.md](docs/contributing.md)** - Contribution guidelines
+- **[CHANGELOG.md](CHANGELOG.md)** - Version history and changes
+
 ## Directory Structure
 
 ```
 rules.d/
-├── README.md
+├── README.md                    # This file
+├── CATALOG.md                   # Complete rules index
+├── CHANGELOG.md                 # Version history
+├── docs/                        # Documentation
+│   ├── rule-format.md           # Rule file format guide
+│   ├── usage-guide.md           # How to use these rules
+│   └── contributing.md          # Contribution guidelines
+├── tests/                       # Testing infrastructure
+│   ├── test-runner.sh           # Main test runner
+│   ├── validate-rules.sh        # Rule file validation
+│   └── check-structure.sh       # Directory structure checks
+├── .github/workflows/           # CI/CD
+│   └── test.yml                 # GitHub Actions workflow
 ├── general/                     # General-purpose rules for everyday operations
 │   ├── rules.md                 # Core AI agent behavioral rules
 │   ├── journaling-rules.md      # Rules for logging reasoning to journal.md
@@ -153,11 +175,28 @@ When following these rules, AI agents will create/maintain:
 
 ## Contributing
 
-Feel free to:
+See [docs/contributing.md](docs/contributing.md) for detailed contribution guidelines.
+
+Quick ways to contribute:
 - Add new rules files for additional domains
 - Improve existing rules based on experience
 - Submit issues for unclear or missing guidelines
+- Help improve documentation
+
+## Testing
+
+Run the test suite locally:
+
+```bash
+./tests/test-runner.sh
+```
+
+Individual test scripts:
+```bash
+./tests/check-structure.sh    # Verify directory structure
+./tests/validate-rules.sh     # Validate rule file formatting
+```
 
 ## License
 
-This project is open source. Feel free to use and adapt these rules for your AI agent workflows
+This project is open source. Feel free to use and adapt these rules for your AI agent workflows.
