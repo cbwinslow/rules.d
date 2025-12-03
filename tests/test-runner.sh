@@ -54,14 +54,14 @@ run_test() {
 echo "Starting test suite..."
 
 # Test 1: Directory Structure
-run_test "Directory Structure Check" "$SCRIPT_DIR/check-structure.sh" || true
+run_test "Directory Structure Check" "$SCRIPT_DIR/check-structure.sh"
 
 # Test 2: Rule File Validation
-run_test "Rule File Validation" "$SCRIPT_DIR/validate-rules.sh" || true
+run_test "Rule File Validation" "$SCRIPT_DIR/validate-rules.sh"
 
 # Test 3: Link Check (if check-links.sh exists)
 if [ -f "$SCRIPT_DIR/check-links.sh" ]; then
-    run_test "Link Validation" "$SCRIPT_DIR/check-links.sh" || true
+    run_test "Link Validation" "$SCRIPT_DIR/check-links.sh"
 fi
 
 # Calculate duration

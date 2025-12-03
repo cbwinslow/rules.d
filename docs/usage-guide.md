@@ -58,7 +58,7 @@ Read and follow the rules in: /path/to/rules.d/general/rules.md
 Clone the repository and reference locally:
 
 ```bash
-git clone https://github.com/yourusername/rules.d.git
+git clone https://github.com/cbwinslow/rules.d.git
 ```
 
 ### Method 4: Symbolic Links

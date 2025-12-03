@@ -66,7 +66,7 @@ check_formatting() {
         line_num=$((line_num + 1))
         
         # Check for tabs (should use spaces)
-        if [[ "$line" == *$'\t'* ]]; then
+        if echo "$line" | grep -q "$(printf '\t')"; then
             if [ $local_warnings -lt 5 ]; then  # Limit warnings
                 echo -e "  ${YELLOW}Warning (line $line_num): Tab character found (use spaces)${NC}"
             fi

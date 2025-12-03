@@ -6,10 +6,16 @@ on:
   pull_request:
     branches: [main]
 
+# Minimal permissions required
+permissions:
+  contents: read
+
 jobs:
   validate:
     name: Validate Rules
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     
     steps:
       - name: Checkout repository
@@ -32,6 +38,8 @@ jobs:
   link-check:
     name: Check Links
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     
     steps:
       - name: Checkout repository
