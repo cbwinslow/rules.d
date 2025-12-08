@@ -25,14 +25,16 @@ Core behavioral rules for AI agents applicable to all domains.
 
 | File | Description | Tags |
 |------|-------------|------|
-| [rules.md](general/rules.md) | Core AI agent behavioral principles | `core`, `behavior`, `best-practices` |
+| [rules.md](general/rules.md) | Core AI agent behavioral principles with logging guidelines | `core`, `behavior`, `best-practices`, `logging` |
 | [journaling-rules.md](general/journaling-rules.md) | Rules for logging reasoning to journal.md | `logging`, `audit`, `transparency` |
 | [todo-rules.md](general/todo-rules.md) | Guidelines for todo lists and task tracking | `tasks`, `productivity`, `tracking` |
+| [task-rules.md](general/task-rules.md) | Rules for tracking current task context in task.md | `tasks`, `context`, `logging`, `feedback`, `testing` |
 
 ### When to Use
 - **Always**: Start every AI interaction with `general/rules.md`
-- **For audit trails**: Add `journaling-rules.md`
-- **For task management**: Add `todo-rules.md`
+- **For current task tracking**: Add `task-rules.md` to maintain task context, log test results, and track feedback
+- **For audit trails**: Add `journaling-rules.md` to log reasoning and decisions
+- **For task backlog management**: Add `todo-rules.md` for tracking all project tasks
 
 ---
 

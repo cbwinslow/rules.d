@@ -82,18 +82,27 @@ Organize todos into sections:
 - Assign appropriate priority
 - Include context for future reference
 - Link to related journal entries when applicable
+- Add todos discovered during testing or code review
+- Reference test results that identified the need for the task
+- Include feedback that led to the todo creation
 
 ### 2. Updating Todos
 - Update status as work progresses
 - Add notes about partial progress
 - Revise priority as circumstances change
 - Update the "Last Updated" timestamp
+- Log test results that affect task status or priority
+- Document feedback received that impacts the todo
+- Add summary notes about blockers or obstacles encountered
 
 ### 3. Completing Todos
 - Mark items complete immediately when finished
 - Add completion date
 - Move completed items to the Completed section
 - Include brief notes on what was done
+- Reference test results that verify completion
+- Note any feedback that confirmed task completion
+- Summarize outcomes and lessons learned
 
 ### 4. Removing Todos
 - Never delete todos entirely (for audit trail)
@@ -141,7 +150,47 @@ todos: reprioritize security audit items
 docs: update journal and todos after sprint planning
 ```
 
+## Logging Information to Todos
+
+### Test Results
+When test results impact tasks:
+- Add todos for failing tests that need fixes
+- Update existing todos with test outcomes
+- Note test coverage gaps as new todos
+- Reference specific test names and error messages
+- Example: `- [ ] Fix failing test: test_user_authentication - AssertionError on line 45`
+
+### Summaries and Progress
+Include progress summaries in todo notes:
+- Brief summary of what was accomplished
+- Obstacles encountered and how they were addressed
+- Current state of partially completed tasks
+- Estimated remaining effort
+- Example: `- [ ] Complete user API (50% done - GET/POST working, PUT/DELETE pending)`
+
+### Feedback Integration
+Log feedback as or in todos:
+- Create todos for feedback items requiring action
+- Reference feedback source and date
+- Include specific feedback points in todo description
+- Track feedback resolution status
+- Example: `- [ ] Address code review feedback: add input validation to login endpoint [Reviewer: @senior-dev, Date: 2024-01-15]`
+
+### Information Capture
+When adding context to todos:
+- Link to relevant documentation or resources
+- Include error messages or logs that motivate the task
+- Reference related issues or pull requests
+- Note dependencies on other systems or teams
+- Document assumptions or constraints
+
 ## Integration Guidelines
+
+### With Task Context (task-rules.md)
+- Reference current task.md from related todos
+- Create todos for items discovered in task.md
+- Keep todos.md and task.md objectives synchronized
+- Use todos for long-term tracking, task.md for current session
 
 ### With Journaling (journaling-rules.md)
 - Reference todo items in journal entries when relevant
