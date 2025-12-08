@@ -62,6 +62,10 @@ Always log reasoning tokens for:
 - Creative problem-solving
 - Task prioritization decisions
 - Risk assessments
+- Test result analysis and interpretation
+- Feedback evaluation and response planning
+- Summary of significant milestones or completions
+- Information discoveries that impact the project
 
 ### 3. Logging Frequency
 - Log at the START of significant tasks
@@ -102,12 +106,41 @@ git commit -m "journal: {description}"
 git push origin {current-branch}
 ```
 
+## Logging Specific Information Types
+
+### Test Results
+When logging test results in journal.md:
+- Include summary of test run outcomes
+- Analyze what failures mean for the system
+- Document reasoning about which failures to prioritize
+- Explain interpretation of unexpected results
+- Log decisions about test coverage needs
+- Cross-reference with task.md for detailed results
+
+### Feedback
+When logging feedback in journal.md:
+- Document reasoning for how to respond to feedback
+- Evaluate trade-offs of different feedback responses
+- Explain decisions to accept, modify, or decline suggestions
+- Log analysis of feedback patterns or themes
+- Cross-reference with task.md for specific feedback items
+
+### Information and Summaries
+When logging summaries in journal.md:
+- Synthesize key insights from work completed
+- Document patterns or lessons learned
+- Explain how new information changes understanding
+- Log reasoning about what information is most important
+- Capture high-level perspective on project state
+
 ## Integration with Other Rules
 
 - Journaling should complement, not replace, code comments
 - Journal entries may reference related todo items
 - Cross-reference with todo-rules.md for task tracking integration
+- Cross-reference with task-rules.md for current task context
 - Use consistent timestamps with other logging systems
+- Use journal.md for reasoning, task.md for results, todos.md for actions
 
 ## Privacy and Security
 

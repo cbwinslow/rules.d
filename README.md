@@ -139,9 +139,10 @@ Please follow the rules in:
 
 The `general/` folder contains everyday operational rules:
 
-- **rules.md**: Core behavioral principles for all AI operations
-- **journaling-rules.md**: Instructions for logging reasoning tokens to `journal.md` and committing to GitHub
-- **todo-rules.md**: Guidelines for managing todo lists in `todos.md` and syncing with GitHub
+- **rules.md**: Core behavioral principles for all AI operations with comprehensive logging guidelines
+- **task-rules.md**: Instructions for maintaining current task context in `task.md` including test results, feedback, and progress summaries
+- **journaling-rules.md**: Rules for logging reasoning tokens to `journal.md` and committing to GitHub
+- **todo-rules.md**: Guidelines for managing todo lists in `todos.md` with test results and feedback integration
 
 ### Domain-Specific Rules
 
@@ -165,13 +166,15 @@ Each domain folder contains specialized rules:
 ```markdown
 Follow the rules in:
 - rules.d/general/rules.md
+- rules.d/general/task-rules.md
 - rules.d/general/journaling-rules.md
 - rules.d/general/todo-rules.md
 
 For this session:
-1. Log all reasoning to journal.md
-2. Track tasks in todos.md
-3. Commit both files to GitHub after changes
+1. Maintain current task context in task.md with test results and feedback
+2. Log all reasoning to journal.md
+3. Track all tasks in todos.md
+4. Commit all files to GitHub after changes
 ```
 
 ### Example 2: Code Development
@@ -197,17 +200,43 @@ Follow the rules in:
 Research topic: [Your research question here]
 ```
 
-## Journaling and Todo Workflow
+## Comprehensive Logging Workflow
 
-The `general/journaling-rules.md` and `general/todo-rules.md` files establish a workflow for:
+The general rules establish a complete logging workflow for AI agents:
 
-1. **Reasoning Logs**: AI agents log their decision-making process to `journal.md`
-2. **Task Tracking**: All tasks are tracked in `todos.md` with proper formatting
-3. **Version Control**: Both files are committed to GitHub after updates
+1. **Current Task Context**: Active task progress, test results, and feedback tracked in `task.md`
+2. **Reasoning Logs**: Decision-making process and analysis logged to `journal.md`
+3. **Task Backlog**: All project tasks tracked in `todos.md` with priorities and status
+4. **Version Control**: All logging files are committed to GitHub after updates
+
+### Information Logging
+AI agents following these rules will systematically log:
+- **Test Results**: Comprehensive test outcomes, failures, and analysis in task.md
+- **Feedback**: All feedback received with responses and actions in task.md
+- **Summaries**: Progress summaries and milestone completions across all log files
+- **Decisions**: Reasoning and rationale in journal.md
+- **Actions**: Concrete tasks and next steps in todos.md
 
 ### File Templates
 
 When following these rules, AI agents will create/maintain:
+
+**task.md** - Current task context and results:
+```markdown
+# Current Task
+**Status**: In Progress
+**Started**: 2024-01-15 09:00:00
+
+## Task Description
+[What needs to be accomplished]
+
+## Test Results
+- Total: 10, Passed: 8, Failed: 2
+- [Details of failures and actions needed]
+
+## Feedback Received
+- [Feedback items with responses and status]
+```
 
 **journal.md** - Reasoning and decision logs:
 ```markdown
