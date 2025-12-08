@@ -88,12 +88,13 @@ export class RuleAnalyzer {
 
     // Add framework-specific rules if applicable
     if (context.framework) {
+      const framework = context.framework;
       const frameworkRules = this.rules.filter(
         (rule) =>
-          rule.metadata.applicability?.frameworks?.includes(context.framework!)
+          rule.metadata.applicability?.frameworks?.includes(framework)
       );
       recommendedRules.push(...frameworkRules);
-      scenarios.push(`${context.framework}-framework`);
+      scenarios.push(`${framework}-framework`);
     }
 
     // Deduplicate rules

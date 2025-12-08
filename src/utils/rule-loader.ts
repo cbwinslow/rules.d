@@ -2,7 +2,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 import matter from 'gray-matter';
 import { globSync } from 'glob';
-import { Rule, RuleMetadata } from '../types/rule.js';
+import { Rule, RuleMetadata, RuleCategory } from '../types/rule.js';
 
 export class RuleLoader {
   private rulesDir: string;
@@ -125,8 +125,8 @@ export class RuleLoader {
     };
   }
 
-  private inferCategory(dirName: string): any {
-    const validCategories = [
+  private inferCategory(dirName: string): RuleCategory {
+    const validCategories: RuleCategory[] = [
       'general',
       'coding',
       'writing',
@@ -138,7 +138,7 @@ export class RuleLoader {
       'devops',
     ];
 
-    return validCategories.includes(dirName) ? dirName : 'general';
+    return validCategories.includes(dirName as RuleCategory) ? (dirName as RuleCategory) : 'general';
   }
 
   private extractTitle(content: string): string | null {
@@ -182,7 +182,10 @@ export class RuleLoader {
       }
     }
 
-    return languages.length > 0 ? languages : 'universal';
+    if (languages.length === 0) {
+      return 'universal';
+    }
+    return languages.length === 1 ? languages[0] : languages;
   }
 
   private generateTags(filename: string, content: string): string[] {

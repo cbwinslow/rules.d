@@ -10,6 +10,7 @@ import {
 } from '@modelcontextprotocol/sdk/types.js';
 import { RuleAnalyzer } from '../analyzer/rule-analyzer.js';
 import { ScenarioContext } from '../types/rule.js';
+import { ListRulesArgs, GetRuleArgs, RecommendBundleArgs, SearchRulesArgs } from './types.js';
 import * as path from 'path';
 import { fileURLToPath } from 'url';
 
@@ -157,18 +158,19 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
   try {
     switch (name) {
       case 'list_rules': {
+        const listArgs = args as ListRulesArgs;
         let rules = analyzer.getAllRules();
 
-        if (args?.category) {
-          rules = rules.filter((r) => r.metadata.category === args.category);
+        if (listArgs?.category) {
+          rules = rules.filter((r) => r.metadata.category === listArgs.category);
         }
 
-        if (args?.language && typeof args.language === 'string') {
-          rules = analyzer.searchByLanguage(args.language);
+        if (listArgs?.language) {
+          rules = analyzer.searchByLanguage(listArgs.language);
         }
 
-        if (args?.tags && Array.isArray(args.tags)) {
-          rules = analyzer.searchByTags(args.tags as string[]);
+        if (listArgs?.tags) {
+          rules = analyzer.searchByTags(listArgs.tags);
         }
 
         return {
@@ -193,12 +195,12 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       }
 
       case 'get_rule': {
+        const getRuleArgs = args as unknown as GetRuleArgs;
         const rules = analyzer.getAllRules();
-        const ruleId = (args as any)?.ruleId;
-        const rule = rules.find((r) => r.metadata.id === ruleId);
+        const rule = rules.find((r) => r.metadata.id === getRuleArgs.ruleId);
 
         if (!rule) {
-          throw new Error(`Rule not found: ${ruleId}`);
+          throw new Error(`Rule not found: ${getRuleArgs.ruleId}`);
         }
 
         return {
@@ -220,12 +222,12 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       }
 
       case 'recommend_bundle': {
-        const argsAny = args as any;
+        const bundleArgs = args as unknown as RecommendBundleArgs;
         const context: ScenarioContext = {
-          type: argsAny.type,
-          language: argsAny.language,
-          framework: argsAny.framework,
-          priorities: argsAny.priorities,
+          type: bundleArgs.type,
+          language: bundleArgs.language,
+          framework: bundleArgs.framework,
+          priorities: bundleArgs.priorities,
         };
 
         const bundle = analyzer.recommendBundle(context);
@@ -276,23 +278,23 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       }
 
       case 'search_rules': {
+        const searchArgs = args as SearchRulesArgs;
         let rules = analyzer.getAllRules();
-        const argsAny = args as any;
 
-        if (argsAny?.category) {
-          rules = rules.filter((r) => r.metadata.category === argsAny.category);
+        if (searchArgs?.category) {
+          rules = rules.filter((r) => r.metadata.category === searchArgs.category);
         }
 
-        if (argsAny?.language && typeof argsAny.language === 'string') {
-          rules = analyzer.searchByLanguage(argsAny.language);
+        if (searchArgs?.language) {
+          rules = analyzer.searchByLanguage(searchArgs.language);
         }
 
-        if (argsAny?.tags && Array.isArray(argsAny.tags)) {
-          rules = analyzer.searchByTags(argsAny.tags);
+        if (searchArgs?.tags) {
+          rules = analyzer.searchByTags(searchArgs.tags);
         }
 
-        if (argsAny?.query && typeof argsAny.query === 'string') {
-          const query = argsAny.query.toLowerCase();
+        if (searchArgs?.query) {
+          const query = searchArgs.query.toLowerCase();
           rules = rules.filter(
             (r) =>
               r.metadata.title.toLowerCase().includes(query) ||

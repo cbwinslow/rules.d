@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "rules-d": {
+      "command": "node",
+      "args": [
+        "/path/to/rules.d/dist/mcp/server.js"
+      ],
+      "description": "Universal rules repository for AI agents"
+    }
+  }
+}
