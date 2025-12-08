@@ -45,12 +45,21 @@ Software development rules and best practices.
 | [rules.md](coding/rules.md) | General coding best practices | `development`, `best-practices`, `code-quality` |
 | [python-rules.md](coding/python-rules.md) | Python-specific development rules | `python`, `language-specific` |
 | [javascript-typescript-rules.md](coding/javascript-typescript-rules.md) | JS/TS development guidelines | `javascript`, `typescript`, `language-specific` |
+| [go-rules.md](coding/go-rules.md) | Go development best practices | `go`, `language-specific`, `concurrency` |
+| [rust-rules.md](coding/rust-rules.md) | Rust development and safety rules | `rust`, `language-specific`, `safety` |
+| [java-rules.md](coding/java-rules.md) | Java and Spring Boot guidelines | `java`, `language-specific`, `spring` |
+| [csharp-rules.md](coding/csharp-rules.md) | C# and .NET best practices | `csharp`, `dotnet`, `language-specific` |
+| [performance-rules.md](coding/performance-rules.md) | Performance optimization guidelines | `performance`, `optimization`, `profiling` |
+| [accessibility-rules.md](coding/accessibility-rules.md) | Accessibility best practices (WCAG) | `accessibility`, `a11y`, `wcag` |
+| [testing-rules.md](coding/testing-rules.md) | Testing strategies and TDD | `testing`, `tdd`, `quality` |
 | [git-rules.md](coding/git-rules.md) | Version control best practices | `git`, `version-control`, `collaboration` |
 
 ### When to Use
 - **Any development task**: Use `coding/rules.md`
-- **Python projects**: Add `python-rules.md`
-- **JavaScript/TypeScript projects**: Add `javascript-typescript-rules.md`
+- **Language-specific projects**: Add corresponding language rules
+- **Performance optimization**: Add `performance-rules.md`
+- **Accessible applications**: Add `accessibility-rules.md`
+- **Testing focus**: Add `testing-rules.md`
 - **Version control operations**: Add `git-rules.md`
 
 ---
@@ -194,7 +203,7 @@ Quick reference for finding rules by tag:
 | Category | Files | Total Lines |
 |----------|-------|-------------|
 | General | 3 | ~200 |
-| Coding | 4 | ~400 |
+| Coding | 11 | ~3500 |
 | Writing | 1 | ~200 |
 | Research | 1 | ~150 |
 | Communication | 1 | ~100 |
@@ -202,7 +211,7 @@ Quick reference for finding rules by tag:
 | Project Management | 1 | ~200 |
 | Security | 1 | ~240 |
 | DevOps | 1 | ~150 |
-| **Total** | **14** | **~1800** |
+| **Total** | **21** | **~4890** |
 
 ---
 

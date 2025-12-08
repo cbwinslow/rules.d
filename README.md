@@ -2,61 +2,116 @@
 
 [![Test Rules](https://github.com/cbwinslow/rules.d/actions/workflows/test.yml/badge.svg)](https://github.com/cbwinslow/rules.d/actions/workflows/test.yml)
 
-A comprehensive collection of rules.md files for AI agents to follow across various domains and applications.
+A universal source for practical, high-quality rules across all coding languages and domains, with an MCP server for AI agent integration.
 
 ## Purpose
 
-This repository provides a centralized, organized system of behavioral rules and guidelines for AI agents. These rules help ensure consistent, high-quality, and safe AI-assisted operations across different use cases.
+This repository provides a centralized, organized system of behavioral rules and best practices for AI agents and developers. These rules lead to better code quality, improved performance, enhanced security, tighter results, less waste, more efficiency, and consistent outcomes across different use cases.
+
+## ✨ New Features
+
+- **🌍 Universal Language Coverage**: Rules for Python, JavaScript/TypeScript, Go, Rust, Java, C#, and more
+- **🎯 Smart Rule Bundling**: AI-powered rule analyzer that recommends optimal rule combinations for your scenario
+- **🔌 MCP Server**: Model Context Protocol server for seamless AI agent integration
+- **⚡ Performance Rules**: Comprehensive optimization guidelines
+- **♿ Accessibility Rules**: Complete accessibility best practices
+- **🧪 Testing Rules**: Test-driven development and testing strategies
+- **🔍 Rule Search & Discovery**: CLI tools for finding the right rules
+- **📦 Pre-configured Bundles**: Common scenarios covered out-of-the-box
 
 ## 📚 Documentation
 
 - **[CATALOG.md](CATALOG.md)** - Complete index of all rules by category
+- **[docs/mcp-server-guide.md](docs/mcp-server-guide.md)** - MCP server setup and usage guide
 - **[docs/usage-guide.md](docs/usage-guide.md)** - How to use these rules in your workflows
 - **[docs/rule-format.md](docs/rule-format.md)** - Standard format for writing rule files
 - **[docs/contributing.md](docs/contributing.md)** - Contribution guidelines
 - **[CHANGELOG.md](CHANGELOG.md)** - Version history and changes
 
-## Directory Structure
+## 🚀 Quick Start
 
+### For AI Agents via MCP
+
+1. **Install dependencies:**
+   ```bash
+   npm install
+   npm run build
+   ```
+
+2. **Configure your AI agent** to use the MCP server (see [MCP Server Guide](docs/mcp-server-guide.md))
+
+3. **Access rules programmatically** through the MCP protocol
+
+### Using the CLI
+
+```bash
+# List all rules
+node dist/cli/index.js list
+
+# Get recommended rules for Python web development
+node dist/cli/index.js recommend --type coding --language python --priorities security performance
+
+# Search for specific rules
+node dist/cli/index.js search "testing"
+
+# View common bundles
+node dist/cli/index.js bundles
 ```
-rules.d/
-├── README.md                    # This file
-├── CATALOG.md                   # Complete rules index
-├── CHANGELOG.md                 # Version history
-├── docs/                        # Documentation
-│   ├── rule-format.md           # Rule file format guide
-│   ├── usage-guide.md           # How to use these rules
-│   └── contributing.md          # Contribution guidelines
-├── tests/                       # Testing infrastructure
-│   ├── test-runner.sh           # Main test runner
-│   ├── validate-rules.sh        # Rule file validation
-│   └── check-structure.sh       # Directory structure checks
-├── .github/workflows/           # CI/CD
-│   └── test.yml                 # GitHub Actions workflow
-├── general/                     # General-purpose rules for everyday operations
-│   ├── rules.md                 # Core AI agent behavioral rules
-│   ├── journaling-rules.md      # Rules for logging reasoning to journal.md
-│   └── todo-rules.md            # Rules for todo lists and GitHub commits
-├── coding/                      # Software development rules
-│   ├── rules.md                 # General coding best practices
-│   ├── python-rules.md          # Python-specific rules
-│   ├── javascript-typescript-rules.md  # JS/TS-specific rules
-│   └── git-rules.md             # Version control rules
-├── writing/                     # Content creation rules
-│   └── rules.md                 # Writing and documentation rules
-├── research/                    # Research and analysis rules
-│   └── rules.md                 # Research methodology rules
-├── communication/               # Communication rules
-│   └── rules.md                 # Email, messaging, meeting rules
-├── data/                        # Data processing rules
-│   └── rules.md                 # Data analysis and management rules
-├── project-management/          # Project management rules
-│   └── rules.md                 # PM best practices and templates
-├── security/                    # Security-focused rules
-│   └── rules.md                 # Security best practices
-└── devops/                      # DevOps and CI/CD rules
-    └── rules.md                 # Infrastructure and deployment rules
+
+### Manual Usage
+
+Reference the appropriate rules file(s) in your AI agent prompts:
+
+```markdown
+Please follow the rules in:
+- rules.d/general/rules.md (always)
+- rules.d/coding/python-rules.md
+- rules.d/coding/performance-rules.md
+- rules.d/coding/testing-rules.md
 ```
+
+## 📖 Available Rules
+
+### Language-Specific Rules
+- **Python** - Type hints, testing, best practices
+- **JavaScript/TypeScript** - Modern JS/TS patterns, async/await, React
+- **Go** - Concurrency, error handling, idiomatic Go
+- **Rust** - Ownership, lifetimes, safety
+- **Java** - Spring Boot, modern Java features, design patterns
+- **C#** - .NET, LINQ, async patterns
+
+### Universal Rules
+- **Performance Optimization** - Algorithms, caching, profiling
+- **Accessibility** - WCAG compliance, semantic HTML, ARIA
+- **Testing** - TDD, unit/integration/E2E testing
+- **Security** - OWASP best practices, secure coding
+- **Git** - Branching strategies, commit messages
+
+### Domain Rules
+- **General** - Core AI agent behavior
+- **Writing** - Documentation, technical writing
+- **Research** - Methodology, analysis
+- **DevOps** - CI/CD, infrastructure
+- **Data** - Analysis, processing
+- **Project Management** - Planning, execution
+
+## 🔧 MCP Server
+
+The rules.d MCP server provides programmatic access to all rules for AI agents:
+
+**Available Tools:**
+- `list_rules` - Browse rules with filters
+- `get_rule` - Retrieve specific rule content
+- `recommend_bundle` - Get optimal rule combinations for scenarios
+- `get_common_bundles` - Access pre-configured bundles
+- `search_rules` - Search across all rules
+
+**Example Usage:**
+```bash
+npm start  # Start MCP server
+```
+
+See [MCP Server Guide](docs/mcp-server-guide.md) for detailed setup and integration instructions.
 
 ## Quick Start
 
