@@ -303,7 +303,7 @@ git commit -m "docs: update task progress and logs
 - Use formatting for easy scanning
 - Employ consistent structure
 - Make important information prominent
-- Use status indicators (✅ ❌ ⏸️ 🔄)
+- Use status indicators: ✅ (completed), ❌ (failed/blocked), 🔄 (in progress)
 
 ## Example task.md File
 
@@ -426,7 +426,7 @@ Most authentication logic is working correctly. Two edge cases need fixes:
 **Feedback Points**:
 1. Add rate limiting to login endpoint to prevent brute force attacks
    - **Response**: Agreed, critical security measure
-   - **Action**: Added express-rate-limit with 5 attempts per 15 minutes
+   - **Action**: Implemented rate limiting with 5 attempts per 15 minutes
    - **Status**: Completed ✅
 
 2. Use refresh token rotation for better security
@@ -531,7 +531,7 @@ EOF
 # Commit initial task context
 git add task.md
 git commit -m "task: initialize context for {task name}"
-git push origin {branch}
+git push origin {current-branch}
 ```
 
 ### Logging Test Results
@@ -541,7 +541,7 @@ git push origin {branch}
 # Then commit
 git add task.md
 git commit -m "task: add test results for {component} tests"
-git push origin {branch}
+git push origin {current-branch}
 ```
 
 ### Recording Feedback
@@ -551,7 +551,7 @@ git push origin {branch}
 # Then commit changes
 git add task.md
 git commit -m "task: document code review feedback and responses"
-git push origin {branch}
+git push origin {current-branch}
 ```
 
 ### Completing a Task
@@ -563,5 +563,5 @@ git commit -m "docs: complete authentication task
 
 - task: mark complete with final summary
 - todos: update authentication items to completed"
-git push origin {branch}
+git push origin {current-branch}
 ```
