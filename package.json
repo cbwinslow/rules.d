@@ -1,0 +1,42 @@
+{
+  "name": "rules.d",
+  "version": "1.0.0",
+  "description": "Universal rules repository with MCP server for AI agents",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "rules-mcp": "dist/mcp/server.js",
+    "rules-cli": "dist/cli/index.js"
+  },
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/mcp/server.js",
+    "cli": "node dist/cli/index.js",
+    "test": "./tests/test-runner.sh",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "rules",
+    "ai",
+    "mcp",
+    "model-context-protocol",
+    "coding-standards",
+    "best-practices"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.4",
+    "@types/node": "^22.10.1",
+    "commander": "^12.1.0",
+    "fast-glob": "^3.3.2",
+    "glob": "^11.0.0",
+    "gray-matter": "^4.0.3",
+    "typescript": "^5.7.2",
+    "zod": "^3.24.1"
+  }
+}

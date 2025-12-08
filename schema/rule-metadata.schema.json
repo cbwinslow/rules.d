@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/cbwinslow/rules.d/schema/rule-metadata.schema.json",
+  "title": "Rule Metadata Schema",
+  "description": "Schema for rule file metadata in the rules.d repository",
+  "type": "object",
+  "required": ["id", "title", "category", "tags", "language"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier for the rule file"
+    },
+    "title": {
+      "type": "string",
+      "description": "Human-readable title of the rule file"
+    },
+    "category": {
+      "type": "string",
+      "enum": ["general", "coding", "writing", "research", "communication", "data", "project-management", "security", "devops"]
+    },
+    "language": {
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
+    },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  }
+}
